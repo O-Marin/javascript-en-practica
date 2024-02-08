@@ -35,7 +35,38 @@
         </div>
     </div>
     <script>
-    // Escríbe aquí tu código
+        /* asignar el elemento con la clase resultado a una variable para mostrar el resultado de la suma.*/
+        let resultado = document.querySelector(".resultado");
+
+
+        /* capturar valor de los botones sumar y restar*/
+        let sumar = document.querySelector("#btn-sumar");
+        let restar = document.querySelector("#btn-restar");
+
+        /* asignar  eventos a los botones previamente designados*/
+
+        sumar.addEventListener("click", function () {
+            /* obtener los valores de valor 1 y valor 2 */
+            let valor1 = document.querySelector("#valor1").value;
+            let valor2 = document.querySelector("#valor2").value;
+            resultado.innerHTML = Number(valor1) + Number(valor2)
+        })
+        restar.addEventListener("click", function () {
+            /* obtener los valores de valor 1 y valor 2 */
+            let valor1 = document.querySelector("#valor1").value;
+            let valor2 = document.querySelector("#valor2").value;
+            if ((Number(valor1) -  Number(valor2)) < 0) {
+                resultado.innerHTML = "0";
+            } else {
+                resultado.innerHTML = Number(valor1) - Number(valor2)
+            }
+        })
+        
+
+        
+
+
+
     </script>
 </body>
 
