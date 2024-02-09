@@ -61,7 +61,8 @@
 
         /* Funcion de validacion*/
 
-        let validar = () => {
+        let validar = (e) => {
+            e.preventDefault()
             /**
          * Guardo los valores de los elementos input en variables reconocibles
          */
@@ -79,17 +80,25 @@
             
             if (patron.test(nombre) == false) {
                 errorNombre.innerHTML = "Nombre Invalido";
+            }else{
+                errorNombre.innerHTML = "";
             }
 
             if(patron.test(asunto) == false){
                 errorAsunto.innerHTML = "Asunto Invalido";
+            }else{
+                errorAsunto.innerHTML = "";
             }
             if(patron.test(mensaje) == false){
                 errorMensaje.innerHTML = "Mensaje invalido";
+            }else{
+                errorMensaje.innerHTML = "";
             }
             if(patron.test(nombre) == true && patron.test(asunto) == true && patron.test(mensaje)== true){
                 
                 resultado.innerHTML = "Mensaje Recibido con Exito"
+            }else{
+                resultado.innerHTML = "";
             }
         }
 
